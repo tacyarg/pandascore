@@ -59,6 +59,10 @@ module.exports = function(config) {
     listTournaments(options) {
       return api.get('/tournaments', options)
     },
+    getTournament(id) {
+      assert(id, 'requires id')
+      return api.get('/tournaments', { id })
+    },
     listTournamentsByGame(videogame_id, options) {
       assert(videogame_id, 'requires videogame_id')
       return api.get('/tournaments', {
@@ -80,10 +84,6 @@ module.exports = function(config) {
         ...options,
       })
     },
-    getTournament(id) {
-      assert(id, 'requires id')
-      return api.get('/tournaments', { id })
-    },
     listUpcomingTournaments() {
       return api.get('/tournaments/upcoming')
     },
@@ -95,6 +95,10 @@ module.exports = function(config) {
     },
     listMatches(options) {
       return api.get('/matches', options)
+    },
+    getMatch(id) {
+      assert(id, 'requires id')
+      return api.get('/matches', { id })
     },
     listMatchesByTeam(team_id, options) {
       assert(team_id, 'requires team_id')
@@ -123,10 +127,6 @@ module.exports = function(config) {
         tournament_id,
         ...options,
       })
-    },
-    getMatch(id) {
-      assert(id, 'requires id')
-      return api.get('/matches', { id })
     },
     listUpcomingMatches() {
       return api.get('/matches/upcoming')
