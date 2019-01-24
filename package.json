@@ -6,5 +6,26 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0"
-  }
+  },
+  "author": "tacyarg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tacyarg/pandascore.git"
+  },
+  "keywords": [
+    "panda",
+    "score",
+    "pandascore",
+    "promise",
+    "node",
+    "nodejs",
+    "wrapper",
+    "api",
+    "axios",
+    "native-promises"
+  ],
+  "bugs": {
+    "url": "https://github.com/tacyarg/pandascore/issues"
+  },
+  "homepage": "https://pandascore.co"
 }
