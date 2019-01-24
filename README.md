@@ -15,7 +15,7 @@ api
   .catch(console.error)
 ```
 
-## Actions
+## API Interface
 
 ### listActions()
 
