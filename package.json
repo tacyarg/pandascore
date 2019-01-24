@@ -1,6 +1,6 @@
 {
   "name": "pandascore",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple api wrapper for pandascore",
   "main": "index.js",
   "license": "MIT",
