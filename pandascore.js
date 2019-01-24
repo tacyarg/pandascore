@@ -8,8 +8,8 @@ module.exports = function(config) {
   const api = CallAPI(config)
 
   const actions = {
-    listGames() {
-      return api.get('/videogames')
+    listGames(options) {
+      return api.get('/videogames', options)
     },
     getGame(id) {
       assert(id, 'requires id')
@@ -19,6 +19,7 @@ module.exports = function(config) {
       return api.get('/leagues', options)
     },
     listLeaguesByGame(videogame_id, options) {
+      assert(videogame_id, 'requires videogame_id')
       return api.get('/leagues', { videogame_id, ...options })
     },
     getLeague(id) {
@@ -35,7 +36,7 @@ module.exports = function(config) {
         ...options,
       })
     },
-    listSeriesByLeauge(league_id, options) {
+    listSeriesByLeague(league_id, options) {
       assert(league_id, 'requires league_id')
       return api.get('/series', {
         league_id,

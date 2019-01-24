@@ -20,5 +20,23 @@ api
 ### listActions()
 List all available methods.
 
-### listGames()
+### listGames([options])
 List all games pandascore supports.
+
+* `options` - object containing optional arguments: sort, filter, range.
+
+### getGame(id)
+Get data about a specific videogame.
+
+* `id` - The videogame id
+
+### listLeagues([options])
+List all leagues tracked by pandascore.
+
+* `options` - object containing optional arguments: sort, filter, range.
+
+### listLeaguesByGame(videogame_id, [options])
+list all leagues by videogame id.
+
+* `videogame_id` - string containing a game id.
+* `options` - object containing optional arguments: sort, filter, range.
