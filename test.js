@@ -1,5 +1,5 @@
 const api = require('./index')({
-  token: 'KWXvSBDIerSHxxtdqqK11ZZeLfByZl0dgd_MRvNGZ95CISa2Ybk',
+  token: 'KWXvSBDIerSHxxtdqqK11ZZeLfByZl0dgd_MRvNGZ95CISa2Ybk'
 })
 
 api

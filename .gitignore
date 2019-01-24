@@ -2,7 +2,3 @@ node_modules
 *.env
 log
 *.log
-env.json
-prod.json
-dev.json
-/env
