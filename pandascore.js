@@ -7,7 +7,7 @@ module.exports = function(config) {
   config.baseURL = 'https://api.pandascore.co'
   const api = CallAPI(config)
 
-  return {
+  const actions = {
     listAvailableGames() {
       return api.get('/videogames')
     },
@@ -201,5 +201,12 @@ module.exports = function(config) {
       assert(videogame, 'requires videogame')
       return api.get('/additions', { videogame, ...options })
     },
+  }
+
+  return {
+    ...actions,
+    listActions() {
+      return Object.keys(actions)
+    }
   }
 }
