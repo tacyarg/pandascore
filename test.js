@@ -1,8 +1,8 @@
 const api = require('./index')({
-  token: '',
+  token: 'KWXvSBDIerSHxxtdqqK11ZZeLfByZl0dgd_MRvNGZ95CISa2Ybk',
 })
 
 api
-  .listLeagues()
+  .listActions()
   .then(console.log)
   .catch(console.error)

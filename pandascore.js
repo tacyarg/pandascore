@@ -15,8 +15,10 @@ module.exports = function(config) {
       assert(id, 'requires id')
       return api.get('/videogames', { id })
     },
-    listLeagues(videogame_id, options) {
-      assert(videogame_id, 'requires videogame_id')
+    listLeagues(options) {
+      return api.get('/leagues', options)
+    },
+    listLeaguesByGame(videogame_id, options) {
       return api.get('/leagues', { videogame_id, ...options })
     },
     getLeague(id) {
@@ -205,7 +207,7 @@ module.exports = function(config) {
 
   return {
     ...actions,
-    listActions() {
+    async listActions() {
       return Object.keys(actions)
     }
   }
