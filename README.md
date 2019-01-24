@@ -14,3 +14,11 @@ api
   .catch(console.error)
 
 ```
+
+## Actions
+
+### listActions()
+List all available methods.
+
+### listGames()
+List all games pandascore supports.

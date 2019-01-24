@@ -8,7 +8,7 @@ module.exports = function(config) {
   const api = CallAPI(config)
 
   const actions = {
-    listAvailableGames() {
+    listGames() {
       return api.get('/videogames')
     },
     getGame(id) {
