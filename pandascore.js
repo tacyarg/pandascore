@@ -47,21 +47,21 @@ module.exports = function(config) {
       assert(id, 'requires id')
       return api.get('/series', { id })
     },
-    listUpcomingSeries() {
-      return api.get('/series/upcoming')
+    listUpcomingSeries(options) {
+      return api.get('/series/upcoming', options)
     },
-    listRunningSeries() {
-      return api.get('/series/running')
+    listRunningSeries(options) {
+      return api.get('/series/running', options)
     },
-    listPastSeries() {
-      return api.get('/series/past')
+    listPastSeries(options) {
+      return api.get('/series/past', options)
     },
     listTournaments(options) {
       return api.get('/tournaments', options)
     },
-    getTournament(id) {
+    getTournament(id, options) {
       assert(id, 'requires id')
-      return api.get('/tournaments', { id })
+      return api.get('/tournaments', { id, ...options })
     },
     listTournamentsByGame(videogame_id, options) {
       assert(videogame_id, 'requires videogame_id')
@@ -84,14 +84,14 @@ module.exports = function(config) {
         ...options,
       })
     },
-    listUpcomingTournaments() {
-      return api.get('/tournaments/upcoming')
+    listUpcomingTournaments(options) {
+      return api.get('/tournaments/upcoming', options)
     },
-    listRunningTournaments() {
-      return api.get('/tournaments/running')
+    listRunningTournaments(options) {
+      return api.get('/tournaments/running', options)
     },
-    listPastTournaments() {
-      return api.get('/tournaments/past')
+    listPastTournaments(options) {
+      return api.get('/tournaments/past', options)
     },
     listMatches(options) {
       return api.get('/matches', options)
@@ -128,38 +128,38 @@ module.exports = function(config) {
         ...options,
       })
     },
-    listUpcomingMatches() {
-      return api.get('/matches/upcoming')
+    listUpcomingMatches(options) {
+      return api.get('/matches/upcoming', options)
     },
     listUpcomingMatchesBySeries(serie_id) {
       assert(serie_id, 'requires serie_id')
-      return api.get('/matches/upcoming', { serie_id })
+      return api.get('/matches/upcoming', { serie_id, ...options })
     },
-    listUpcomingMatchesByLeague(league_id) {
+    listUpcomingMatchesByLeague(league_id, options) {
       assert(league_id, 'requires league_id')
-      return api.get('/matches/upcoming', { league_id })
+      return api.get('/matches/upcoming', { league_id, ...options })
     },
-    listRunningMatches() {
-      return api.get('/matches/running')
+    listRunningMatches(options) {
+      return api.get('/matches/running', options)
     },
-    listRunningMatchesBySeries(serie_id) {
+    listRunningMatchesBySeries(serie_id, options) {
       assert(serie_id, 'requires serie_id')
-      return api.get('/matches/running', { serie_id })
+      return api.get('/matches/running', { serie_id, ...options })
     },
-    listRunningMatchesByLeague(league_id) {
+    listRunningMatchesByLeague(league_id, options) {
       assert(league_id, 'requires league_id')
-      return api.get('/matches/running', { league_id })
+      return api.get('/matches/running', { league_id, ...options })
     },
-    listPastMatches() {
-      return api.get('/matches/past')
+    listPastMatches(options) {
+      return api.get('/matches/past', options)
     },
-    listPastMatchesBySeries(serie_id) {
+    listPastMatchesBySeries(serie_id, options) {
       assert(serie_id, 'requires serie_id')
-      return api.get('/matches/past', { serie_id })
+      return api.get('/matches/past', { serie_id, ...options })
     },
-    listPastMatchesByLeague(league_id) {
+    listPastMatchesByLeague(league_id, options) {
       assert(league_id, 'requires league_id')
-      return api.get('/matches/past', { league_id })
+      return api.get('/matches/past', { league_id, ...options })
     },
     listMatchOpponents(id) {
       assert(id, 'requires id')
@@ -211,6 +211,6 @@ module.exports = function(config) {
     ...actions,
     async listActions() {
       return Object.keys(actions)
-    }
+    },
   }
 }
