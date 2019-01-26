@@ -207,6 +207,7 @@ module.exports = function(config) {
   }
 
   return {
+    _api: api,
     ...actions,
     async listActions() {
       return Object.keys(actions)
