@@ -181,7 +181,7 @@ module.exports = function(config) {
     },
     getTeam(id) {
       assert(id, 'requires id')
-      return api.get('/teams', { id })
+      return api.get('/teams/' + id)
     },
     listIncidents(options) {
       return api.get('/incidents', options)
